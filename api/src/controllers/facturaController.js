@@ -140,7 +140,7 @@ const getFilePdf = async (req, res) => {
     if (!file) return res.status(500).send("Error no existe imagen!");
     const fileBuffer = Buffer.from(file, "base64");
     const doc = {
-      content: [{ image: `data:image/png;base64,${fileBuffer}` }],
+      content: [{ image: fileBuffer }],
     };
 
     const pdf = await pdfMake.createPdf(doc);
