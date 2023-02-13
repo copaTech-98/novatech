@@ -138,6 +138,7 @@ const getFilePdf = async (req, res) => {
   const { file } = req.body;
   try {
     if (!file) return res.status(500).send("Error no existe imagen!");
+    console.log(file);
     // const fileBuffer = await Buffer.from(file, "base64");
     const doc = {
       content: [{ image: `${file}` }],
