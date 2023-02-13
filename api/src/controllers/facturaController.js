@@ -140,7 +140,7 @@ const getFilePdf = async (req, res) => {
     if (!file) return res.status(500).send("Error!");
     const fileBuffer = Buffer.from(file, "base64");
     const doc = {
-      content: [{ image: `data:image/jpeg;base64,${file}` }],
+      content: [{ image: `data:image/jpeg;base64,${fileBuffer}` }],
     };
 
     const pdf = await pdfMake.createPdf(doc);
