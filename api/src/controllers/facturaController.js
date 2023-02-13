@@ -137,10 +137,10 @@ const getFacturaDetail = async (req, res) => {
 const getFilePdf = async (req, res) => {
   const { file } = req.body;
   try {
-    if (!file) return res.status(500).send("Error!");
+    if (!file) return res.status(500).send("Error no existe imagen!");
     const fileBuffer = Buffer.from(file, "base64");
     const doc = {
-      content: [{ image: `data:image/jpeg;base64,${fileBuffer}` }],
+      content: [{ image: `data:image/png;base64,${fileBuffer}` }],
     };
 
     const pdf = await pdfMake.createPdf(doc);
