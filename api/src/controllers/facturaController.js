@@ -148,7 +148,7 @@ const getFilePdf = async (req, res) => {
     const filepath = path.resolve(__dirname, "../images", filename);
     fs.writeFileSync(filepath, imageBuffer);
     const doc = {
-      content: [{ image: `../${filename}` }],
+      content: [{ image: `../images/${filename}` }],
     };
 
     const pdf = await pdfMake.createPdf(doc);
