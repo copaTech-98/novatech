@@ -144,6 +144,7 @@ const getFilePdf = async (req, res) => {
     const imageBuffer = Buffer.from(base64Data, "base64");
     const filename = `image-${Date.now()}.${file.split("/")[1].split(";")[0]}`;
     const filepath = path.resolve(__dirname, "../images", filename);
+    fs.writeFileSync(filepath, imageBuffer);
     const doc = {
       content: [{ image: `../${filename}` }],
     };
