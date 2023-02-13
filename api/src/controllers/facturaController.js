@@ -3,6 +3,7 @@ const { Carts, ProductsInCart, Users, Products, Facturas } = sequelize;
 const { Op } = require("sequelize");
 const pdfMake = require("pdfmake/build/pdfmake.js");
 const pdfFonts = require("pdfmake/build/vfs_fonts.js");
+const path = require("path");
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const createFactura = async (req, res) => {
